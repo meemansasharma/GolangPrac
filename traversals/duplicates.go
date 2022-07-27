@@ -4,11 +4,6 @@ import (
 	"fmt"
 )
 
-type Node struct {
-	value int
-	next  *Node
-}
-
 func (node Node) CheckDuplicates(head *Node) *Node {
 
 	current := head
@@ -18,7 +13,7 @@ func (node Node) CheckDuplicates(head *Node) *Node {
 	}
 	//122246
 	for temp != nil {
-		if current.value == temp.value {
+		if current.val == temp.val {
 			temp = temp.next
 			current.next = temp
 		} else {
@@ -31,7 +26,7 @@ func (node Node) CheckDuplicates(head *Node) *Node {
 }
 func (node Node) CreateList() *Node {
 	head := Node{}
-	head.value = 1
+	head.val = 1
 	head.next = nil
 	return &head
 }
@@ -45,8 +40,8 @@ func (node *Node) Insert(head *Node, val int) {
 		temp = temp.next
 	}
 	newNode := Node{
-		value: val,
-		next:  nil,
+		val:  val,
+		next: nil,
 	}
 	temp.next = &newNode
 }
@@ -54,7 +49,7 @@ func (node *Node) Insert(head *Node, val int) {
 func (node Node) Print(head *Node) {
 	temp := head
 	for temp != nil {
-		fmt.Printf("%d ", temp.value)
+		fmt.Printf("%d ", temp.val)
 		temp = temp.next
 	}
 	fmt.Println()

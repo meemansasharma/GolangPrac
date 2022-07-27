@@ -63,4 +63,15 @@ func main() {
 	// graph := Graph{}
 	// graph.Creategraph()
 	// graph.getVertexCount()
+	duplicateList := Node{}
+	head := duplicateList.CreateList()
+	fmt.Println(duplicateList.CheckDuplicates(head))
+	duplicateList.Insert(head, 2)
+	duplicateList.Insert(head, 2)
+	duplicateList.Insert(head, 2)
+	duplicateList.Insert(head, 4)
+	duplicateList.Insert(head, 6)
+	duplicateList.Print(head)
+	duplicateList.CheckDuplicates(head)
+	duplicateList.Print(head)
 }
